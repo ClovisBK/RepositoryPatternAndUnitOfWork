@@ -21,5 +21,12 @@ namespace RepositoryPattern.Services.ProductService
                 .Where(p => p.Name.Contains(name))
                 .ToListAsync();
         }
+
+        public async Task<IEnumerable>> ProductPriceRange(decimal price)
+        {
+            return await _context.Products
+                .Where(p => p.Price == p.price)
+                .TolistAsync();
+        }
     }
 }
