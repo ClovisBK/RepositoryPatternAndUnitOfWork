@@ -7,5 +7,6 @@ namespace RepositoryPattern.Services.ProductService
     public interface IProductRepository<T> : IRepository<Product> where T : class
     {
         Task<IEnumerable<Product>> GetProductsByNameAsync(string name);
+        Task<IEnumerable<Prouct>> ProductPriceRange(decimal price);
     }
 }
