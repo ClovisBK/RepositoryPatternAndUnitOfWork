@@ -44,6 +44,15 @@ namespace RepositoryPattern.Controller
             return Ok(product);
         }
 
+        [HttpGet("Search-by-price")]
+        public async Task<IActionResult> ProductPrice(decimal price)
+        {
+            var product = await _uow.Products.ProductPriceRange(price);
+            if(product == null)
+                return NotFound();
+                return Ok(produc);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateProductDto dto)
         {
